@@ -21,7 +21,7 @@ namespace RestWithASP_NET4Udemy.Controllers
         [HttpGet("sum/{firstNumber}/{secondNumber}")]
         public IActionResult Sum(string firstNumber, string secondNumber)
         {
-            if(IsNumeric(firstNumber) && IsNumeric(secondNumber))
+            if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
                 var sum = ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber);
                 return Ok(sum.ToString());
@@ -71,7 +71,7 @@ namespace RestWithASP_NET4Udemy.Controllers
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = (ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber)) /2 ;
+                var sum = (ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber)) / 2;
                 return Ok(sum.ToString());
             }
 
@@ -94,9 +94,9 @@ namespace RestWithASP_NET4Udemy.Controllers
         {
             double number;
             bool isNumber = double.TryParse(
-                strNumber, 
-                System.Globalization.NumberStyles.Any, 
-                System.Globalization.NumberFormatInfo.InvariantInfo, 
+                strNumber,
+                System.Globalization.NumberStyles.Any,
+                System.Globalization.NumberFormatInfo.InvariantInfo,
                 out number);
             return isNumber;
         }
@@ -110,9 +110,5 @@ namespace RestWithASP_NET4Udemy.Controllers
             }
             return 0;
         }
-
-
-
-
     }
 }
